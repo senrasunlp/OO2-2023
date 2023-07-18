@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Biblioteca {
++ agregarSocio(Socio socio):void 
++ exportarSocios():String 
+}
+
+class Socio {
+- String nombre
+- String legajo
+- String email
+Socio(String nombre, String email, String legajo):void
+}
+
+class VoorheesExporter {
++ exportar(Socio socio):String 
++ exportar(List<Socio> socios):String
+}
+
+Biblioteca -right-> VoorheesExporter: "exporter"
+Biblioteca -->"socios *" Socio
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+Class MediaPlayer <<Client>>{}
+Class Media <<Target>>{
++play()
+}
+
+
+Class Audio{
++play()
+}
+
+Class VideoFile{
++play()
+}
+
+Class VideoStreamAdapter<<Adapter>>{
++play()
+}
+
+Class VideoStream<<Adaptee>>{
++reproduce()
+}
+
+MediaPlayer --right-->"media*" Media
+
+Media <|-- Audio 
+Media <|-- VideoFile
+Media <|--right-- VideoStreamAdapter 
+VideoStreamAdapter --"-adapter" VideoStream
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+Class Topografia{
+-proporcion_Agua:Integer;
+-proporcion_Tierra:Integer;
+
+}
+@enduml
